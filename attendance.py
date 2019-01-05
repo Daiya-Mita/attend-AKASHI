@@ -6,6 +6,7 @@ import jpholiday
 
 # config
 token = ""
+compid = ""
 
 
 def parser():
@@ -17,7 +18,6 @@ def parser():
 
 def punch(punch_type: int):
     endpoint = "https://atnd.ak4.jp/api/cooperation"
-    compid = ""
     r = requests.post("{}/{}/stamps?token={}&type={}".format(endpoint, compid, token, str(punch_type)))
     for k, v in r.json().items():
         print(k, ":", v)
